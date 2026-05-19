@@ -121,6 +121,10 @@
   * {
     @apply border-border outline-ring/50;
   }
+  htm,
+  body {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -131,15 +135,23 @@
   html {
     @apply font-sans;
   }
-  button:not(:disabled), [role="button"]:not(:disabled) {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
     cursor: pointer;
   }
 }
-@layer utilities {
-  .flex-center {
-    @apply flex items-center justify-center;
-  }
-  .flex-between {
-    @apply flex items-center justify-between;
-  }
+@utility flex-start {
+  @apply flex items-center justify-start;
+}
+@utility flex-end {
+  @apply flex items-center justify-end;
+}
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+@utility flex-between {
+  @apply flex items-center justify-between;
+}
+@utility card-bg {
+  @apply bg-muted/30 dark:bg-card;
 }

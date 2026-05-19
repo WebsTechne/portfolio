@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, IBM_Plex_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/context/theme-provider";
+import { LayoutContent } from "./layout-content";
 
 const syne = Syne({ subsets: ["latin"], variable: "--font-heading" });
 
@@ -39,10 +39,8 @@ export default function RootLayout({
         syne.variable,
       )}
     >
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
+      <body className="flex min-h-full flex-col">
+        <LayoutContent>{children}</LayoutContent>
       </body>
     </html>
   );
