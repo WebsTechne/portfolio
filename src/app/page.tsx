@@ -1,4 +1,4 @@
-import { ContactSection } from "@/components/sections/contact";
+import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
 import { HeroSection } from "@/components/sections/hero";
 import { StackMarqueeSection } from "@/components/sections/stack-marquee";
@@ -11,7 +11,7 @@ export default function Page() {
       <HeroSection />
       <StackMarqueeSection />
       <WorkSection />
-      <ContactSection />
+      <Footer />
     </>
   );
 }

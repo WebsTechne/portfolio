@@ -3,10 +3,17 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useLenis } from "lenis/react";
 
 export function HeroSection() {
+  const lenis = useLenis();
   const year = new Date().getFullYear();
   const age = year - 2008;
+
+  const handleScrollToWork = (e: React.MouseEvent) => {
+    e.preventDefault();
+    lenis?.scrollTo("#work");
+  };
 
   return (
     <section
@@ -51,7 +58,7 @@ export function HeroSection() {
           <Button
             size="lg"
             className="h-11 px-5 text-lg"
-            render={<Link href="#work" />}
+            render={<Link href="#work" replace onClick={handleScrollToWork} />}
             nativeButton={false}
           >
             See My Work

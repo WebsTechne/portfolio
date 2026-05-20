@@ -6,6 +6,7 @@ import {
   IconMessage,
   IconSearch,
 } from "@tabler/icons-react";
+import { useLenis } from "lenis/react";
 import Link from "next/link";
 
 export type TablerIcon = typeof IconSearch;
@@ -22,6 +23,15 @@ export const Icon = ({ icon: IconComponent }: { icon: TablerIcon }) => {
 };
 
 export function Header() {
+  const lenis = useLenis();
+
+  const handleHashClick = (e: React.MouseEvent, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      lenis?.scrollTo(href);
+    }
+  };
+
   return (
     <header className="bg-background flex-between sticky top-0 z-1000 h-12 border-b">
       <section className="flex-center h-full flex-row"></section>
@@ -30,6 +40,8 @@ export function Header() {
           <Link
             key={soc.href}
             href={soc.href}
+            onClick={(e) => handleHashClick(e, soc.href)}
+            replace={!soc.href.startsWith("http")}
             target={soc.href.startsWith("http") ? "_blank" : "_self"}
             className="flex-center hover:bg-primary/10 hover:text-primary text-muted-foreground aspect-square h-full"
           >

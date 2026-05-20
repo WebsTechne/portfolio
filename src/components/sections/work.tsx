@@ -53,8 +53,8 @@ export function WorkSection() {
 
       <div className="bg-border dark:bg-primary/30 dark:border-primary/30 grid min-h-[85vh] grid-cols-2 grid-rows-2 gap-px border-b">
         {PROJECTS.map((project, index) => (
-          <div key={`${project.title}-${index}`} className="card-bg">
-            <div className="bg-muted relative aspect-video w-full">
+          <div key={`${project.title}-${index}`} className="card-bg p-4">
+            <div className="bg-muted relative mb-2 aspect-video w-full">
               <Image
                 src={project.src}
                 alt={`${project.title} screenshot`}
@@ -64,7 +64,7 @@ export function WorkSection() {
               />
             </div>
 
-            <div className="bg-card p-4">
+            <div className="bg-card">
               <h3 className="font-heading mb-1 text-2xl font-semibold">
                 {project.title}
               </h3>
