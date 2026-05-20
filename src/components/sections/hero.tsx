@@ -4,16 +4,10 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
+import { scrollTo } from "@/lib/scroll";
 
 export function HeroSection() {
   const lenis = useLenis();
-  const year = new Date().getFullYear();
-  const age = year - 2008;
-
-  const handleScrollToWork = (e: React.MouseEvent) => {
-    e.preventDefault();
-    lenis?.scrollTo("#work");
-  };
 
   return (
     <section
@@ -32,23 +26,32 @@ export function HeroSection() {
       </div>
 
       <div className="card-bg flex-between h-full flex-col gap-5 px-5 pt-6 pb-4">
-        <div className="flex flex-col gap-5">
-          <h1 className="font-heading max-w-sm text-6xl leading-15 font-bold">
-            Triumph Aidenojie
-          </h1>
-          <p className="text-muted-foreground text-xl">
-            {/*Hi. I&apos;m <span className="text-foreground font-medium">Triumph Aidenojie.</span>*/}
+        <div className="flex w-full flex-col items-start gap-5">
+          <div>
+            <h3 className="font-heading text-3xl leading-8 font-semibold">
+              Hi, I&apos;m
+            </h3>
+            <h1 className="font-heading relative max-w-sm text-6xl leading-15 font-bold">
+              Triumph
+            </h1>
+            <h1 className="font-heading relative w-max! max-w-sm text-6xl leading-15 font-bold">
+              Aidenojie
+              <span className="text-muted-foreground absolute bottom-2 left-full ml-2 w-max text-2xl font-semibold">
+                (eye-deh-NO-jay)
+              </span>
+            </h1>
+          </div>
+          <p className="text-muted-foreground max-w-md text-xl">
             Computer Science student at{" "}
-            <Button
-              variant="link"
-              className="h-max! p-0!"
-              render={<Link href="https://uniben.edu" />}
-              nativeButton={false}
+            <Link
+              href="https://uniben.edu"
+              target="_blank"
+              className="text-primary font-heading underline-offset-3 hover:underline"
             >
               UNIBEN
-            </Button>
+            </Link>
             . <br />
-            Full-stack JavaScript developer. I code sleek and responsive web
+            Full-stack JavaScript developer. I build sleek and responsive web
             applications.
             {/*I&apos;m a full-stack developer with a passion for creating sleek and responsive web applications. I design websites and mobile apps. I particularly love dynamic and interactive user experiences.*/}
           </p>
@@ -58,8 +61,7 @@ export function HeroSection() {
           <Button
             size="lg"
             className="h-11 px-5 text-lg"
-            render={<Link href="#work" replace onClick={handleScrollToWork} />}
-            nativeButton={false}
+            onClick={() => scrollTo(lenis, "work")}
           >
             See My Work
           </Button>

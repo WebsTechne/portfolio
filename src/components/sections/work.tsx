@@ -39,8 +39,8 @@ const PROJECTS = [
 export function WorkSection() {
   return (
     <section id="work" className="bg-background">
-      <div className="px-2 py-4">
-        <h1 className="font-heading text-3xl font-semibold">Projects</h1>
+      <div className="px-4 py-6">
+        <h2 className="font-heading text-4xl font-semibold">Projects</h2>
         <p className="text-muted-foreground max-w-prose text-lg">
           These are some of the projects I&apos;ve worked on. All the projects
           here are open-source and hosted on Vercel. They&apos;re all built with{" "}
@@ -51,9 +51,9 @@ export function WorkSection() {
         </p>
       </div>
 
-      <div className="bg-border dark:bg-primary/30 dark:border-primary/30 grid min-h-[85vh] grid-cols-2 grid-rows-2 gap-px border-b">
+      <div className="bg-border dark:bg-primary/30 dark:border-primary/30 grid grid-cols-2 grid-rows-2 gap-px border-b pt-px">
         {PROJECTS.map((project, index) => (
-          <div key={`${project.title}-${index}`} className="card-bg p-4">
+          <div key={`${project.title}-${index}`} className="bg-card p-4">
             <div className="bg-muted relative mb-2 aspect-video w-full">
               <Image
                 src={project.src}
@@ -107,7 +107,14 @@ export function WorkSection() {
               <p className="line-clamp-2 max-w-100">{project.description}</p>
             </div>
 
-            <div className="bg-muted h-full w-8/10"></div>
+            <div className="bg-muted relative h-full w-8/10 border">
+              <Image
+                src={project.src}
+                alt={project.title}
+                className="object-cover"
+                fill
+              />
+            </div>
 
             <div className="absolute right-4 bottom-4 flex items-center gap-2">
               <Button

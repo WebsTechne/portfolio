@@ -161,3 +161,21 @@ header[id],
 footer[id] {
   scroll-margin-top: 48px; /* match the header height */
 }
+
+.marquee-track {
+  animation: marquee 10s linear infinite;
+  @apply text-muted-foreground flex items-center gap-4;
+}
+
+.marquee-strip {
+  @apply flex shrink-0 gap-4;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  } /* -50% because track = 2 strips */
+}
