@@ -11,14 +11,16 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="grid min-h-[80dvh] grid-cols-[4fr_5fr] border-b"
+      className="grid min-h-[80dvh] grid-cols-[4fr_5fr] grid-rows-[1fr] border-b"
     >
-      <div className="relative h-full border-r">
+      <div className="relative border-r">
         <Image
           src="/stephen-tettey-atsu-Bg6ob-DYdfg-unsplash.jpg"
           alt="Stephen Tettey Atsu from Unsplash"
           className="object-cover"
+          sizes="(max-width: 768px) 100vw, 44vw"
           fill
+          priority
         />
       </div>
 
@@ -34,6 +36,7 @@ export function HeroSection() {
               variant="link"
               className="h-max! p-0!"
               render={<Link href="https://uniben.edu" />}
+              nativeButton={false}
             >
               UNIBEN
             </Button>
@@ -51,7 +54,7 @@ export function HeroSection() {
             render={<Link href="#work" />}
             nativeButton={false}
           >
-            My Work
+            See My Work
           </Button>
         </div>
       </div>

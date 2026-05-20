@@ -116,14 +116,13 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+html {
+  scroll-behavior: smooth;
+}
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-  }
-  htm,
-  body {
-    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
@@ -133,6 +132,7 @@
     cursor: pointer;
   }
   html {
+    scroll-behavior: smooth;
     @apply font-sans;
   }
   button:not(:disabled),
@@ -154,4 +154,10 @@
 }
 @utility card-bg {
   @apply bg-muted/30 dark:bg-card;
+}
+
+section[id],
+header[id],
+footer[id] {
+  scroll-margin-top: 48px; /* match the header height */
 }
