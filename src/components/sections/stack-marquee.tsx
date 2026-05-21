@@ -9,9 +9,11 @@ import {
   siNextdotjs,
   siTailwindcss,
   siAndroid,
+  siPrisma,
+  siPostgresql,
 } from "simple-icons";
 
-export type SimpleIcon = typeof siCss;
+type SimpleIcon = typeof siCss;
 function TechIcon({ icon, size = 32 }: { icon: SimpleIcon; size?: number }) {
   return (
     <svg
@@ -27,7 +29,7 @@ function TechIcon({ icon, size = 32 }: { icon: SimpleIcon; size?: number }) {
   );
 }
 
-export function StackMarqueeSection() {
+function StackMarqueeSection() {
   const icons = [
     siHtml5,
     siCss,
@@ -38,6 +40,8 @@ export function StackMarqueeSection() {
     siAndroid,
     siNextdotjs,
     siNodedotjs,
+    siPrisma,
+    siPostgresql,
   ];
 
   return (
@@ -55,22 +59,23 @@ export function StackMarqueeSection() {
           priority
         />
       </div>
-      <div className="flex-center relative h-full w-full max-w-109 overflow-clip border-x">
+      <div className="marquee-wrap">
         <div className="marquee-track">
-          {/* Strip 1 */}
           <div className="marquee-strip">
             {icons.map((icon) => (
               <TechIcon key={icon.slug} icon={icon} />
             ))}
           </div>
-          {/* Strip 2 — identical clone */}
           <div className="marquee-strip" aria-hidden="true">
             {icons.map((icon) => (
-              <TechIcon key={icon.slug} icon={icon} />
+              <span key={icon.slug} className="shrink-0">
+                <TechIcon icon={icon} />
+              </span>
             ))}
           </div>
         </div>
       </div>
+
       <div className="relative h-full flex-1">
         <Image
           src="/stephen-tettey-atsu-Bg6ob-DYdfg-unsplash.jpg"
@@ -84,3 +89,5 @@ export function StackMarqueeSection() {
     </section>
   );
 }
+
+export { type SimpleIcon, TechIcon, StackMarqueeSection };

@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
 import Image from "next/image";
+import { siGsap, siNextdotjs, siReactquery, siTypescript } from "simple-icons";
+import { TechIcon } from "./stack-marquee";
 
 const PROJECTS = [
   {
@@ -11,6 +13,7 @@ const PROJECTS = [
     src: "/monicx-screenshot.png",
     href: "https://monicxed.vercel.app",
     detailsHref: "/work/monicx",
+    icons: [siTypescript, siNextdotjs],
   },
   {
     title: "Jottar",
@@ -19,6 +22,7 @@ const PROJECTS = [
     src: "/jottar-screenshot.png",
     href: "https://jottar.vercel.app",
     detailsHref: "/work/jottar",
+    icons: [siTypescript, siNextdotjs],
   },
   {
     title: "Repolens",
@@ -26,6 +30,7 @@ const PROJECTS = [
     src: "/repolens-screenshot.png",
     href: "https://repolens.vercel.app",
     detailsHref: "/work/repolens",
+    icons: [siTypescript, siNextdotjs, siReactquery],
   },
   {
     title: "Ciao",
@@ -33,6 +38,7 @@ const PROJECTS = [
     src: "/ciao-screenshot.png",
     href: "https://ciao-hey.vercel.app",
     detailsHref: "/work/ciao",
+    icons: [siTypescript, siNextdotjs, siGsap],
   },
 ];
 
@@ -52,7 +58,7 @@ export function WorkSection() {
       </div>
 
       <div className="bg-border dark:bg-primary/30 dark:border-primary/30 grid grid-cols-2 grid-rows-2 gap-px border-b pt-px">
-        {PROJECTS.map((project, index) => (
+        {/*{PROJECTS.map((project, index) => (
           <div key={`${project.title}-${index}`} className="bg-card p-4">
             <div className="bg-muted relative mb-2 aspect-video w-full">
               <Image
@@ -64,8 +70,8 @@ export function WorkSection() {
               />
             </div>
 
-            <div className="bg-card">
-              <h3 className="font-heading mb-1 text-2xl font-semibold">
+            <div className="bg-card flex flex-col gap-2">
+              <h3 className="font-heading text-2xl leading-8 font-semibold">
                 {project.title}
               </h3>
               <div className="flex gap-2">
@@ -92,13 +98,18 @@ export function WorkSection() {
                   </Button>
                 </div>
               </div>
+              <div className="text-muted-foreground flex items-center gap-3">
+                {project.icons.map((ic) => (
+                  <TechIcon key={ic.title} icon={ic} size={24} />
+                ))}
+              </div>
             </div>
           </div>
-        ))}
-        {/*{PROJECTS.map((project, index) => (
+        ))}*/}
+        {PROJECTS.map((project, index) => (
           <div
             key={index}
-            className="card-bg relative flex flex-col justify-between gap-4 p-4 pb-0"
+            className="bg-card relative flex flex-col justify-between gap-4 p-4"
           >
             <div>
               <h3 className="font-heading mb-2 text-2xl font-semibold">
@@ -107,7 +118,7 @@ export function WorkSection() {
               <p className="line-clamp-2 max-w-100">{project.description}</p>
             </div>
 
-            <div className="bg-muted relative h-full w-8/10 border">
+            <div className="bg-muted relative aspect-video w-8/10 border">
               <Image
                 src={project.src}
                 alt={project.title}
@@ -116,9 +127,16 @@ export function WorkSection() {
               />
             </div>
 
-            <div className="absolute right-4 bottom-4 flex items-center gap-2">
-              <Button
+						<div className="flex-between gap-2">
+							<div className="text-muted-foreground flex items-center gap-3">
+                {project.icons.map((ic) => (
+                  <TechIcon key={ic.title} icon={ic} size={24} />
+                ))}
+							</div>
+
+              <div className="flex items-center gap-2"><Button
                 render={<Link href={project.href} target="_blank" />}
+                nativeButton={false}
                 size="lg"
                 className="mr-2 w-max! text-sm font-medium"
               >
@@ -126,15 +144,16 @@ export function WorkSection() {
               </Button>
               <Button
                 render={<Link href={project.detailsHref} />}
+                nativeButton={false}
                 size="lg"
                 variant="outline"
                 className="w-max! text-sm font-medium"
               >
                 Details <IconArrowRight />
-              </Button>
+              </Button></div>
             </div>
           </div>
-        ))}*/}
+        ))}
       </div>
     </section>
   );
