@@ -115,42 +115,45 @@ export function WorkSection() {
               <h3 className="font-heading mb-2 text-2xl font-semibold">
                 {project.title}
               </h3>
-              <p className="line-clamp-2 max-w-100">{project.description}</p>
+              <p className="line-clamp-2 max-w-lg">{project.description}</p>
             </div>
 
-            <div className="bg-muted relative aspect-video w-8/10 border">
+            <div className="bg-muted relative aspect-2/1 w-1/1 border">
+              {/* w-8/10 */}
               <Image
                 src={project.src}
                 alt={project.title}
-                className="object-cover"
+                className="object-contain"
                 fill
               />
             </div>
 
-						<div className="flex-between gap-2">
-							<div className="text-muted-foreground flex items-center gap-3">
+            <div className="flex-between gap-2">
+              <div className="text-muted-foreground flex items-center gap-3">
                 {project.icons.map((ic) => (
                   <TechIcon key={ic.title} icon={ic} size={24} />
                 ))}
-							</div>
+              </div>
 
-              <div className="flex items-center gap-2"><Button
-                render={<Link href={project.href} target="_blank" />}
-                nativeButton={false}
-                size="lg"
-                className="mr-2 w-max! text-sm font-medium"
-              >
-                Visit site <IconArrowUpRight />
-              </Button>
-              <Button
-                render={<Link href={project.detailsHref} />}
-                nativeButton={false}
-                size="lg"
-                variant="outline"
-                className="w-max! text-sm font-medium"
-              >
-                Details <IconArrowRight />
-              </Button></div>
+              <div className="flex items-center gap-2">
+                <Button
+                  render={<Link href={project.href} target="_blank" />}
+                  nativeButton={false}
+                  size="lg"
+                  className="mr-2 w-max! text-sm font-medium"
+                >
+                  Visit site <IconArrowUpRight />
+                </Button>
+                <Button
+                  render={<Link href={project.detailsHref} />}
+                  nativeButton={false}
+                  size="lg"
+                  variant="outline"
+                  className="w-max! text-sm font-medium"
+                >
+                  Details <IconArrowRight />
+                </Button>
+              </div>
             </div>
           </div>
         ))}
