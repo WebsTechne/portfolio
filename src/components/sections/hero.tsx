@@ -56,7 +56,7 @@ export function HeroSection() {
             </h1>
             <h1 className="font-heading relative w-max! max-w-sm text-3xl leading-8 font-bold md:text-6xl md:leading-15">
               Aidenojie
-              <span className="text-muted-foreground absolute left-full ml-2 w-max text-xl font-semibold md:bottom-2 md:text-2xl">
+              <span className="text-muted-foreground absolute left-full ml-2 w-max text-lg font-semibold not-sm:top-1/2 not-sm:-translate-y-1/2 md:bottom-2 md:text-2xl">
                 (eye-deh-NO-jay)
               </span>
             </h1>
