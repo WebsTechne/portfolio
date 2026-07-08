@@ -17,9 +17,9 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="grid min-h-[80dvh] border-b sm:grid-cols-[4fr_5fr] sm:grid-rows-[1fr]"
+      className="grid min-h-[80vh] border-b sm:grid-cols-[4fr_5fr] sm:grid-rows-[1fr]"
     >
-      <div className="relative border-r not-sm:min-h-[60dvh]">
+      <div className="relative border-r not-sm:min-h-[60vh]">
         <div
           className={cn(
             "absolute top-4 left-4 z-2 cursor-pointer rounded-full text-white/90",
