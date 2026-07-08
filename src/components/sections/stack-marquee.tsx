@@ -11,6 +11,7 @@ import {
   siAndroid,
   siPrisma,
   siPostgresql,
+  siTanstack,
 } from "simple-icons";
 
 type SimpleIcon = typeof siCss;
@@ -39,6 +40,7 @@ function StackMarqueeSection() {
     siReact,
     siAndroid,
     siNextdotjs,
+    siTanstack,
     siNodedotjs,
     siPrisma,
     siPostgresql,
@@ -49,7 +51,7 @@ function StackMarqueeSection() {
       id="stack-marquee"
       className="flex h-14 items-center overflow-x-clip border-b"
     >
-      <div className="relative h-full flex-1">
+      <div className="relative h-full flex-1 not-sm:hidden">
         <Image
           src="/stephen-tettey-atsu-Bg6ob-DYdfg-unsplash.jpg"
           alt="Stephen Tettey Atsu from Unsplash"
@@ -59,6 +61,7 @@ function StackMarqueeSection() {
           priority
         />
       </div>
+
       <div className="marquee-wrap">
         <div className="marquee-track">
           <div className="marquee-strip">
@@ -76,7 +79,7 @@ function StackMarqueeSection() {
         </div>
       </div>
 
-      <div className="relative h-full flex-1">
+      <div className="relative h-full flex-1 not-sm:hidden">
         <Image
           src="/stephen-tettey-atsu-Bg6ob-DYdfg-unsplash.jpg"
           alt="Stephen Tettey Atsu from Unsplash"

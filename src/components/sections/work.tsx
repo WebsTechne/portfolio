@@ -2,7 +2,13 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
 import Image from "next/image";
-import { siGsap, siNextdotjs, siReactquery, siTypescript } from "simple-icons";
+import {
+  siGsap,
+  siNextdotjs,
+  siReactquery,
+  siTanstack,
+  siTypescript,
+} from "simple-icons";
 import { TechIcon } from "./stack-marquee";
 
 const PROJECTS = [
@@ -23,6 +29,15 @@ const PROJECTS = [
     href: "https://jottar.vercel.app",
     detailsHref: "/work/jottar",
     icons: [siTypescript, siNextdotjs],
+  },
+  {
+    title: "Decker",
+    description:
+      "A modern and responsive student note-sharing platform featuring collections, image-based notes, user libraries, contributors, comments and more.",
+    src: "/decker-screenshot.png",
+    href: "https://decker.pxxl.run",
+    detailsHref: "/work/jottar",
+    icons: [siTypescript, siTanstack, siReactquery],
   },
   {
     title: "Repolens",
@@ -57,7 +72,7 @@ export function WorkSection() {
         </p>
       </div>
 
-      <div className="bg-border dark:bg-primary/30 dark:border-primary/30 grid grid-cols-2 grid-rows-2 gap-px border-b pt-px">
+      <div className="bg-border dark:bg-primary/30 dark:border-primary/30 grid grid-rows-2 gap-px border-b pt-px sm:grid-cols-2">
         {/*{PROJECTS.map((project, index) => (
           <div key={`${project.title}-${index}`} className="bg-card p-4">
             <div className="bg-muted relative mb-2 aspect-video w-full">
@@ -105,7 +120,9 @@ export function WorkSection() {
               </div>
             </div>
           </div>
-        ))}*/}
+        ))}
+				*/}
+
         {PROJECTS.map((project, index) => (
           <div
             key={index}

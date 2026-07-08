@@ -5,16 +5,36 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
 import { scrollTo } from "@/lib/scroll";
+import { useState } from "react";
+import { IconInfoCircle } from "@tabler/icons-react";
+import { cn } from "@/lib/utils";
 
 export function HeroSection() {
   const lenis = useLenis();
 
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section
       id="hero"
-      className="grid min-h-[80dvh] grid-cols-[4fr_5fr] grid-rows-[1fr] border-b"
+      className="grid min-h-[80dvh] border-b sm:grid-cols-[4fr_5fr] sm:grid-rows-[1fr]"
     >
-      <div className="relative border-r">
+      <div className="relative border-r not-sm:min-h-[60dvh]">
+        <div
+          className={cn(
+            "absolute top-4 left-4 z-2 cursor-pointer rounded-full text-white/90",
+            "hover:[&>div]:scale-100 hover:[&>div]:opacity-100",
+            expanded && "text-white [&>div]:scale-100 [&>div]:opacity-100",
+          )}
+          onClick={() => setExpanded((v) => !v)}
+        >
+          <IconInfoCircle size={24} strokeWidth={1.5} />
+
+          <div className="pointer-events-none absolute top-0 left-125/100 w-max scale-80 rounded-full bg-white p-1 px-2 text-sm text-black/90 opacity-0 duration-250">
+            This is not me!
+          </div>
+        </div>
+
         <Image
           src="/stephen-tettey-atsu-Bg6ob-DYdfg-unsplash.jpg"
           alt="Stephen Tettey Atsu from Unsplash"
@@ -28,20 +48,20 @@ export function HeroSection() {
       <div className="card-bg flex-between h-full flex-col gap-5 px-5 pt-6 pb-4">
         <div className="flex w-full flex-col items-start gap-5">
           <div>
-            <h3 className="font-heading text-3xl leading-8 font-semibold">
+            <h3 className="font-heading text-xl leading-8 font-semibold md:text-3xl">
               Hi, I&apos;m
             </h3>
-            <h1 className="font-heading relative max-w-sm text-6xl leading-15 font-bold">
+            <h1 className="font-heading relative max-w-sm text-3xl leading-8 font-bold md:text-6xl md:leading-15">
               Triumph
             </h1>
-            <h1 className="font-heading relative w-max! max-w-sm text-6xl leading-15 font-bold">
+            <h1 className="font-heading relative w-max! max-w-sm text-3xl leading-8 font-bold md:text-6xl md:leading-15">
               Aidenojie
-              <span className="text-muted-foreground absolute bottom-2 left-full ml-2 w-max text-2xl font-semibold">
+              <span className="text-muted-foreground absolute left-full ml-2 w-max text-xl font-semibold md:bottom-2 md:text-2xl">
                 (eye-deh-NO-jay)
               </span>
             </h1>
           </div>
-          <p className="text-muted-foreground max-w-md text-xl">
+          <p className="text-muted-foreground max-w-md text-lg md:text-xl">
             Computer Science student at{" "}
             <Link
               href="https://uniben.edu"
