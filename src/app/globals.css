@@ -164,7 +164,7 @@ footer[id] {
 }
 
 .marquee-wrap {
-  @apply pointer-events-none relative mx-auto flex h-full w-full max-w-100 scrollbar-none overflow-x-auto border-x; /* 384px */
+  @apply pointer-events-none relative mx-auto flex h-full w-full max-w-100 scrollbar-none overflow-x-auto sm:border-x; /* 384px */
 }
 .marquee-track {
   animation: marquee 20s linear infinite;

@@ -30,7 +30,7 @@ export function HeroSection() {
         >
           <IconInfoCircle size={24} strokeWidth={1.5} />
 
-          <div className="pointer-events-none absolute top-0 left-125/100 w-max scale-80 rounded-full bg-white p-1 px-2 text-sm text-black/90 opacity-0 duration-250">
+          <div className="pointer-events-none absolute top-0 left-125/100 w-max origin-bottom-left scale-x-80 scale-y-90 rounded-full bg-white p-1 px-2 text-sm text-black/90 opacity-0 duration-250">
             This is not me!
           </div>
         </div>
@@ -46,7 +46,7 @@ export function HeroSection() {
       </div>
 
       <div className="card-bg flex-between h-full flex-col gap-5 px-5 pt-6 pb-4">
-        <div className="flex w-full flex-col items-start gap-5">
+        <div className="flex w-full flex-col items-start gap-5 overflow-x-clip">
           <div>
             <h3 className="font-heading text-xl leading-8 font-semibold md:text-3xl">
               Hi, I&apos;m
@@ -56,7 +56,7 @@ export function HeroSection() {
             </h1>
             <h1 className="font-heading relative w-max! max-w-sm text-3xl leading-8 font-bold md:text-6xl md:leading-15">
               Aidenojie
-              <span className="text-muted-foreground absolute left-full ml-2 w-max text-lg font-semibold not-sm:top-1/2 not-sm:-translate-y-1/2 md:bottom-2 md:text-2xl">
+              <span className="text-muted-foreground absolute left-full ml-2 w-max text-base font-semibold not-sm:top-1/2 not-sm:-translate-y-1/2 sm:text-lg md:bottom-2 md:text-2xl">
                 (eye-deh-NO-jay)
               </span>
             </h1>
