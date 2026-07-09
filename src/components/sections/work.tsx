@@ -53,7 +53,7 @@ const PROJECTS = [
     description:
       "A code visualisation tool that analyzes TypeScript/JavaScript Github repo zip files and generate interactive dependency graph. It comes with AI powered explanations for any clicked node in the graph.",
     src: "/repolens-screenshot.png",
-    href: "https://repolens.vercel.app",
+    href: "https://repolens.pxxl.click",
     detailsHref: "/work/repolens",
     icons: [siTypescript, siNextdotjs, siReactquery],
   },
