@@ -28,6 +28,8 @@ export async function POST(req: Request) {
       subject: `New message from ${name}`,
       text: `From: ${name} (${email})\n\n${message}`,
     });
+
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {
     return NextResponse.json({ error: "Failed to send" }, { status: 500 });
   }

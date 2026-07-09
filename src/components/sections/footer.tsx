@@ -72,10 +72,14 @@ export function Footer() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error);
+      }
       setSubmitStatus("success");
       form.reset();
-    } catch {
+    } catch (err) {
+      console.error(err);
       setSubmitStatus("error");
     }
   };
