@@ -36,7 +36,16 @@ const PROJECTS = [
       "A modern and responsive student note-sharing platform featuring collections, image-based notes, user libraries, contributors, comments and more.",
     src: "/decker-screenshot.png",
     href: "https://decker.pxxl.run",
-    detailsHref: "/work/jottar",
+    detailsHref: "/work/decker",
+    icons: [siTypescript, siTanstack, siReactquery],
+  },
+  {
+    title: "Mìlà",
+    description:
+      "A minimal, mobile-first LMS for Nigerian schools and universities. Teachers create assignments with attachments, accepted formats and due dates, students submit online, and everyone gets a calm, distraction-free workspace to track it all.",
+    src: "/mila-screenshot.png",
+    href: "https://milaa.vercel.app",
+    detailsHref: "/work/mila",
     icons: [siTypescript, siTanstack, siReactquery],
   },
   {
@@ -65,9 +74,25 @@ export function WorkSection() {
         <h2 className="font-heading text-4xl font-semibold">Projects</h2>
         <p className="text-muted-foreground max-w-prose text-lg">
           These are some of the projects I&apos;ve worked on. All the projects
-          here are open-source and hosted on Vercel. They&apos;re all built with{" "}
+          here are open-source and hosted on{" "}
+          <a href="https://vercel.com" target="_blank" className="text-primary">
+            Vercel
+          </a>{" "}
+          and{" "}
+          <a href="https://pxxl.app" target="_blank" className="text-primary">
+            Pxxl
+          </a>
+          . They&apos;re all built with{" "}
           <a href="https://nextjs.org" target="_blank" className="text-primary">
             Next.js
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://tanstack.com/start/latest"
+            target="_blank"
+            className="text-primary"
+          >
+            Tanstack Start
           </a>
           .
         </p>

@@ -22,8 +22,14 @@ const SOCIAL_LINKS: Social[] = [
   { icon: IconBrandX, href: "https://x.com/triumph_dev" },
 ];
 
-export const Icon = ({ icon: IconComponent }: { icon: TablerIcon }) => {
-  return <IconComponent size={20} />;
+export const Icon = ({
+  icon: IconComponent,
+  className,
+}: {
+  icon: TablerIcon;
+  className?: string;
+}) => {
+  return <IconComponent size={20} className={className} />;
 };
 
 export function Header() {
